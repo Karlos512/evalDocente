@@ -1,0 +1,231 @@
+body {
+    color: #fff;
+}
+
+.card {
+    border: #fff solid 3px;
+    border-radius: 40px;
+    width: 60%;
+}
+
+.btnhome {
+    background-color: #ff4a00 !important;
+    color: #fff !important;
+    border-radius: 30px !important;
+    height: 40px;
+    width: 150px;
+}
+
+.btntrabajo {
+    background-color: #fff !important;
+    color: #000000 !important;
+    border-radius: 30px !important;
+    height: 40px;
+    width: 190px;
+}
+
+@media (min-width: 310px) {
+    body {
+        background-image: url("../images/home/background404mov.png");
+        background-color: black;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .btn-mov {
+        display: block;
+        text-align: center;
+        margin-top: 17%;
+    }
+
+    .btn-desktop {
+        display: none;
+    }
+}
+
+@media (min-width: 1024px) {
+    body {
+        background-image: url("../images/home/background404.png");
+        background-color: black;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        background-size: cover;
+    }
+
+    .btn-mov {
+        display: none;
+    }
+
+    .btn-desktop {
+        display: block;
+        margin-top: 4%;
+    }
+}
+
+@media (min-width: 310px) {
+    img {
+        width: 45%;
+        margin-top: -4%;
+    }
+    .card {
+        margin-top: 10%;
+        width: 80%;
+        text-align: left;
+    }
+
+    .card-body {
+        margin-top: -15%;
+        margin-bottom: 17%;
+    }
+
+    .msg1 {
+        font-size: 1.6rem;
+        margin-left: 5%;
+    }
+
+    .msg2 {
+        font-size: 0.8rem;
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 325px) {
+    img {
+        width: 50%;
+        margin-top: -4%;
+    }
+    .card {
+        margin-top: 10%;
+        width: 80%;
+        text-align: left;
+    }
+
+    .card-body {
+        margin-top: -15%;
+        margin-bottom: 17%;
+    }
+
+    .msg1 {
+        font-size: 1.8rem;
+        margin-left: 5%;
+    }
+
+    .msg2 {
+        font-size: 1rem;
+        margin-left: 5%;
+    }
+}
+
+/*@media (min-width: 377px) {
+    img {
+        width: 35%;
+    }
+}
+
+@media (min-width: 475px) {
+    img {
+        width: 35%;
+    }
+}
+
+@media (min-width: 768px) {
+    img {
+        width: 35%;
+    }
+} */
+
+@media (min-width: 1024px) {
+    img {
+        width: 27%;
+        margin-top: -4%;
+    }
+    .card {
+        margin-top: 10%;
+        width: 55%;
+        text-align: left;
+    }
+
+    .card-body {
+        margin-top: -15%;
+        margin-bottom: 6%;
+    }
+
+    .msg1 {
+        font-size: 2.7rem;
+        margin-left: 5%;
+    }
+
+    .msg2 {
+        font-size: 1.2rem;
+        margin-left: 5%;
+    }
+}
+
+@media (min-width: 1440px) {
+    img {
+        width: 27%;
+        margin-top: -4%;
+    }
+    .card {
+        margin-top: 10%;
+        width: 55%;
+        text-align: left;
+    }
+
+    .card-body {
+        margin-top: -15%;
+        margin-bottom: 6%;
+    }
+
+    .msg1 {
+        font-size: 2.7rem;
+        margin-left: 5%;
+    }
+
+    .msg2 {
+        font-size: 1.2rem;
+        margin-left: 5%;
+    }
+}
+
+/* @media (min-width: 1728px) {
+    img {
+        width: 35%;
+    }
+}
+
+@media (min-width: 2048px) {
+    img {
+        width: 35%;
+    }
+}*/
+
+@media (min-width: 2560px) {
+    img {
+        width: 24%;
+        margin-top: -4%;
+    }
+    .card {
+        margin-top: 10%;
+        width: 45%;
+        text-align: left;
+    }
+
+    .card-body {
+        margin-top: -12%;
+        margin-bottom: 6%;
+    }
+
+    .msg1 {
+        font-size: 3.3rem;
+        margin-left: 5%;
+    }
+
+    .msg2 {
+        font-size: 1.5rem;
+        margin-left: 5%;
+    }
+}

@@ -1,0 +1,86 @@
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    /* background-image: url("../images/login.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center; */
+}
+
+body.is-home {
+    background-image: url("../images/login.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+}
+
+body.page-evaluacion {
+    background-image: url("../images/fondotest.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrado Horizontal (ESTO FALTA) */
+    min-height: 100vh; /* Asegura que el body ocupe toda la pantalla */
+    margin: 0;
+}
+
+.card-login {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    border-radius: 1rem;
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.btn-login {
+    font-size: 0.9rem;
+    letter-spacing: 0.05rem;
+    padding: 0.75rem 1rem;
+}
+
+.options {
+    padding: 5%;
+    display: ruby;
+    align-items: center;
+}
+
+.options img {
+    width: 4%;
+    margin: 1%;
+}
+
+/* welcome */
+
+body.page-welcome {
+    background-color: #f4f7f6;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.welcome-card {
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+.header-accent {
+    height: 8px;
+    background: linear-gradient(90deg, #2563eb, #06b6d4);
+}
+.icon-box {
+    width: 60px;
+    height: 60px;
+    background: #eff6ff;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+}

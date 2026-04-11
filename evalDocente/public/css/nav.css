@@ -1,0 +1,124 @@
+/* nav {
+    font-size: 14px !important;
+}
+
+.navbar-nav li,
+a {
+    font-size: 95%;
+}
+
+.active {
+    color: #ffc500;
+}
+
+.dropdown-item:hover {
+    background-color: #001a84 !important;
+    color: #fff !important;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 10%;
+    left: 100%;
+    margin-top: -1px;
+}
+
+.navbar-nav li:hover > ul.dropdown-menu {
+    display: block;
+}
+
+#navbar-menu {
+    background-color: #001a84;
+}
+
+.logo-nav {
+    margin-top: 10%;
+    width: 10rem;
+    margin-left: 25px;
+} */
+
+/***** Top menu *****/
+
+/* .navbar {
+    padding-top: 10px;
+    background: #333;
+    background: rgba(51, 51, 51, 0.3);
+    border: 0;
+    -o-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -ms-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.navbar.navbar-no-bg {
+    background: none;
+}
+
+ul.navbar-nav {
+    font-size: 16px;
+    color: #fff;
+}
+
+.navbar-inverse ul.navbar-nav li {
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.navbar-inverse ul.navbar-nav li .li-text {
+    opacity: 0.8;
+}
+
+.navbar-inverse ul.navbar-nav li a {
+    display: inline;
+    padding: 0;
+    color: #fff;
+}
+.navbar-inverse ul.navbar-nav li a:hover {
+    color: #fff;
+    opacity: 1;
+    border-bottom: 1px dotted #fff;
+}
+.navbar-inverse ul.navbar-nav li a:focus {
+    color: #fff;
+    outline: 0;
+    opacity: 1;
+    border-bottom: 1px dotted #fff;
+}
+
+.navbar-inverse ul.navbar-nav li .li-social a {
+    margin: 0 5px;
+    font-size: 28px;
+    vertical-align: middle;
+}
+.navbar-inverse ul.navbar-nav li .li-social a:hover,
+.navbar-inverse ul.navbar-nav li .li-social a:focus {
+    border: 0;
+    color: #f35b3f;
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        padding-top: 0;
+    }
+    .navbar.navbar-no-bg {
+        background: #333;
+        background: rgba(51, 51, 51, 0.9);
+    }
+    .navbar-brand {
+        height: 60px;
+        margin-left: 15px;
+    }
+    .navbar-collapse {
+        border: 0;
+    }
+    .navbar-toggle {
+        margin-top: 12px;
+    }
+
+    .top-content {
+        padding: 40px 0 110px 0;
+    }
+} */

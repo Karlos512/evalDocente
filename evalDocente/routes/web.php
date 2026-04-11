@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('welcome', function () {
+    return view('user.welcome');
 });
+
+Route::get('/',[UserController::class,'LoginView'])->name('7');
+Route::get('evaluacion',[UserController::class,'TestView'])->name('evaluacion');
