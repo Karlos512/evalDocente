@@ -1,20 +1,11 @@
 {{-- <div>
 
 </div> --}}
-@extends('layouts.provider')
-@section('content')
-{{-- <body class=""> --}}
-    {{-- @auth --}}
-    {{-- @if (Route::currentRouteName() != "login")
-    @include('partials.navbar')
-    @endif --}}
-    {{-- @endauth --}}
 
-    {{-- <main class="">
-        <div class="scroll-smooth"> --}}
             <div class="card text-center">
+
                 <div class="card-header text-end">
-                  1/20
+                  {{ $position }}/{{ $size }}
                 </div>
                 <div class="card-body">
                     <h5 class="card-title">
@@ -24,11 +15,12 @@
                   <p class="card-text">Explica de manera puntual y clara.</p>
 
                   <div class="options">
-                    <img src="{{asset('images/emojis/c1.png')}}" alt="Pesimo" style="cursor: pointer">
-                    <img src="{{asset('images/emojis/c2.png')}}" alt="Pesimo" style="cursor: pointer">
-                    <img src="{{asset('images/emojis/c3.png')}}" alt="Pesimo" style="cursor: pointer">
-                    <img src="{{asset('images/emojis/c4.png')}}" alt="Pesimo" style="cursor: pointer">
-                    <img src="{{asset('images/emojis/c5.png')}}" alt="Pesimo" style="cursor: pointer">
+                    @livewireScripts
+                    <img src="{{asset('images/emojis/c1.png')}}" alt="Totalmente En Desacuerdo" class="btn-option" wire:click="saveScore(1,1,1)">
+                    <img src="{{asset('images/emojis/c2.png')}}" alt="En desacuerdo" class="btn-option" wire:click="saveScore(1,1,2)">
+                    <img src="{{asset('images/emojis/c3.png')}}" alt="Indiferente" class="btn-option" wire:click="saveScore(1,1,3)">
+                    <img src="{{asset('images/emojis/c4.png')}}" alt="De acuerdo" class="btn-option" wire:click="saveScore(1,1,4)">
+                    <img src="{{asset('images/emojis/c5.png')}}" alt="Totalmente de AcuerdoS" class="btn-option" wire:click="saveScore(1,1,5)">
                   </div>
 
 
@@ -41,6 +33,3 @@
 
         {{-- </div>
     </main> --}}
-
-
-@endsection

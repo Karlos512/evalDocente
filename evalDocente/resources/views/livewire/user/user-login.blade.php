@@ -7,16 +7,16 @@
                        <strong>LOGIN</strong>
                     </h5>
                     {{-- {{ route('login') }} --}}
-                    <form action="#" method="POST">
-                        @csrf
+                    {{-- <form action="#" method="POST">
+                        @csrf --}}
 
                         <div class="form-floating mb-3">
-                            <input type="text" name="usuario" class="form-control" id="floatingInput" placeholder="20152735" required>
+                            <input type="text" name="usuario"  wire:model="usuario" class="form-control" id="floatingInput" placeholder="20152735" required>
                             <label for="floatingInput">Usuario / Matricula</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="password" name="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+                            <input type="password" name="password"  wire:model="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
                             <label for="floatingPassword">Contraseña</label>
                         </div>
 
@@ -28,7 +28,7 @@
                         </div>
 
                         <div class="d-grid">
-                            <button class="btn btn-primary btn-login text-uppercase fw-bold" type="submit">
+                            <button class="btn btn-primary btn-login text-uppercase fw-bold"  wire:click="submitForm" type="submit">
                                 Entrar
                             </button>
                         </div>
@@ -38,7 +38,7 @@
                         <div class="text-center">
                             {{-- <a class="small text-decoration-none" href="#">¿Olvidaste tu contraseña?</a> --}}
                         </div>
-                    </form>
+                    {{-- </form> --}}
                 </div>
             </div>
         </div>

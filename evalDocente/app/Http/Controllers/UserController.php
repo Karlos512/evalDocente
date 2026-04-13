@@ -13,4 +13,17 @@ class UserController extends Controller
     public function TestView(){
         return view('user.test');
     }
+
+    public function ThanksView(){
+        return view('livewire.user.thanks');
+    }
+
+    public function logout(Request $request){
+        Auth::logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect(route('login'));
+    }
 }

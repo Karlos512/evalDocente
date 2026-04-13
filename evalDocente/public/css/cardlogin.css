@@ -54,6 +54,11 @@ body.page-evaluacion {
     margin: 1%;
 }
 
+.btn-option:hover {
+    cursor: pointer;
+    transform: translateY(-3px);
+}
+
 /* welcome */
 
 body.page-welcome {
@@ -83,4 +88,65 @@ body.page-welcome {
     justify-content: center;
     border-radius: 50%;
     margin: 0 auto 20px;
+}
+
+/* Thanks */
+body.page-gracias {
+    background-image: url("../images/fondotest.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.thank-you-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 3rem;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    border: none;
+}
+
+.check-icon {
+    font-size: 4rem;
+    color: #28a745;
+    margin-bottom: 1rem;
+    animation: scaleIn 0.5s ease-out;
+}
+
+@keyframes scaleIn {
+    0% {
+        transform: scale(0);
+    }
+    80% {
+        transform: scale(1.2);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.btn-return {
+    background-color: #333;
+    color: white;
+    border-radius: 25px;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn-return:hover {
+    background-color: #555;
+    color: white;
+    transform: translateY(-2px);
 }

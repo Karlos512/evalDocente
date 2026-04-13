@@ -10,4 +10,20 @@ class UserLogin extends Component
     {
         return view('livewire.user.user-login');
     }
+
+    public function submitForm(Request $request)
+    {
+        dd('entrando');
+        $credentials =[
+            $this->usuario,
+            $this->password
+        ];
+
+        if(Auth::attempt($credentials)){
+            $request->session()->regenerate();
+            return redirect()->intended(route('lista-post'));
+        }else{
+            return redirect(route('/'));
+        }
+    }
 }

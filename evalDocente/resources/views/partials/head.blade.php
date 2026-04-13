@@ -23,7 +23,7 @@
     {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
     {{-- --------------- --}}
 
-    @if(request()->path() == '/' || request()->path() == 'welcome' || request()->path() == 'evaluacion')
+    @if(request()->path() == '/' || request()->path() == 'welcome' || request()->path() == 'evaluacion' || request()->path() == 'gracias')
         <link href="{{ asset('css/cardlogin.css') }}" rel="stylesheet">
     @else
         <link href="{{ asset('css/style.css') }}" rel="stylesheet">
