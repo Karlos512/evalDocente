@@ -51,4 +51,15 @@ class User extends Authenticatable
     // protected $casts = [
     //     'email_verified_at' => 'datetime',
     // ];
+    public function semester()
+    {
+        // Un usuario pertenece a un semestre
+        return $this->belongsTo(SemestreModel::class, 'semester_id');
+    }
+
+    public function group()
+    {
+        // Un usuario pertenece a un grupo
+        return $this->belongsTo(GruposModel::class, 'group_id');
+    }
 }
