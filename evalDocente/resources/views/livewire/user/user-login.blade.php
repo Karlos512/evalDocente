@@ -11,12 +11,12 @@
                         @csrf --}}
 
                         <div class="form-floating mb-3">
-                            <input type="text" name="usuario"  wire:model="usuario" class="form-control" id="floatingInput" placeholder="20152735" required>
+                            <input type="text"  wire:model="usuario" class="form-control" id="floatingInput" placeholder="20152735" required>
                             <label for="floatingInput">Usuario / Matricula</label>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="password" name="password"  wire:model="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
+                            <input type="password"  wire:model="password" class="form-control" id="floatingPassword" placeholder="Contraseña" required>
                             <label for="floatingPassword">Contraseña</label>
                         </div>
 

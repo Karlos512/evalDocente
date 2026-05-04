@@ -43,10 +43,10 @@ class Login extends Component
             $user = Auth::user();
 
             if ($user->role === 'admin') {
-                return redirect()->intended(route('admin.dashboard'));
+                return redirect()->intended(route('nuevo-alumno'));
             }
 
-            return redirect()->intended(route('alumno.evaluacion'));
+            return redirect()->intended(route('evaluacion'));
         }
 
         return redirect(route('/'))->with('error', 'Credenciales incorrectas');
