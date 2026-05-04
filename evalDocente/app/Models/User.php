@@ -17,11 +17,19 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
+    protected $table = 'user';
+
     protected $fillable = [
-        'name',
+        'id',
+        'username',
         'email',
         'password',
+        'role',
+        'semester_id',
+		'group_id'
     ];
+    protected $primaryKey = 'id';
+    public $timestamps = true;
 
     /**
      * The attributes that should be hidden for serialization.
@@ -32,14 +40,15 @@ class User extends Authenticatable
         'password',
         'remember_token',
     ];
+    protected $createdField  = 'created_at';
+    protected $updatedField  = 'updated_at';
 
     /**
      * The attributes that should be cast.
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-        'password' => 'hashed',
-    ];
+    // protected $casts = [
+    //     'email_verified_at' => 'datetime',
+    // ];
 }

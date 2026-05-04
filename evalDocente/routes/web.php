@@ -25,6 +25,8 @@ Route::get('/',[UserController::class,'LoginView'])->name('/');
 
 Route::get('evaluacion',[UserController::class,'TestView'])->name('evaluacion');
 
+Route::get('welcome',[UserController::class,'WelcomeView'])->name('welcome');
+
 // Route::get('evaluacion',[UserController::class,'TestView'])->middleware('auth')->name('evaluacion');
 
 Route::get('gracias',[UserController::class,'ThanksView'])->name('gracias');
@@ -32,3 +34,9 @@ Route::get('gracias',[UserController::class,'ThanksView'])->name('gracias');
 // Route::get('gracias',[UserController::class,'ThanksView'])->middleware('auth')->name('gracias');
 
 Route::get('logout',[UserController::class,'logout'])->name('logout');
+
+
+//ADMIN ROUTES
+Route::get('/admin/nuevo-alumno',[AdminController::class,'nuevoAlumno'])->name('nuevo-alumno');
+
+Route::get('/admin/asignar',[AdminController::class,'asignar'])->name('asignar');

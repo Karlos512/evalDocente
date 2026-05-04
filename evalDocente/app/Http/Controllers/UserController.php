@@ -10,6 +10,10 @@ class UserController extends Controller
         return view('user.login');
     }
 
+    public function WelcomeView(){
+        return view('user.welcome');
+    }
+
     public function TestView(){
         return view('user.test');
     }

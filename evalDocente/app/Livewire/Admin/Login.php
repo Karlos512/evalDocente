@@ -16,18 +16,39 @@ class Login extends Component
         return view('livewire.admin.login');
     }
 
-    public function submitForm(Request $request)
-    {
-        $credentials =[
-            $this->usuario,
-            $this->password
+    // public function submitForm(Request $request)
+    // {
+    //     $credentials =[
+    //         $this->usuario,
+    //         $this->password
+    //     ];
+
+    //     if(Auth::attempt($credentials)){
+    //         $request->session()->regenerate();
+    //         return redirect()->intended(route('lista-post'));
+    //     }else{
+    //         return redirect(route('/'));
+    //     }
+    // }
+
+    public function submitForm(Request $request){
+        $credentials = [
+            'username' => $this->usuario,
+            'password' => $this->password
         ];
 
-        if(Auth::attempt($credentials)){
+        if (Auth::attempt($credentials)) {
             $request->session()->regenerate();
-            return redirect()->intended(route('lista-post'));
-        }else{
-            return redirect(route('/'));
+
+            $user = Auth::user();
+
+            if ($user->role === 'admin') {
+                return redirect()->intended(route('admin.dashboard'));
+            }
+
+            return redirect()->intended(route('alumno.evaluacion'));
         }
+
+        return redirect(route('/'))->with('error', 'Credenciales incorrectas');
     }
 }

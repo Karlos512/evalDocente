@@ -4,15 +4,15 @@
 
             <div class="card text-center">
 
-                <div class="card-header text-end">
-                  {{ $position }}/{{ $size }}
+                <div class="card-header text-center">
+                    <span>{{ $categoria }}</span>
                 </div>
                 <div class="card-body">
-                    <h5 class="card-title">
+                    <h6 class="card-title">
                         <strong>Profesor:</strong> Pedro Rojas Guzman
                         <strong>Materia:</strong> Matematicas Aplicadas
-                    </h5>
-                  <p class="card-text">Explica de manera puntual y clara.</p>
+                    </h6>
+                  <p class="card-text">{{ $pregunta }} </p>
 
                   <div class="options">
                     @livewireScripts
@@ -26,7 +26,8 @@
 
                 </div>
                 <div class="card-footer text-muted text-xs">
-                  Selecciona la opcion que mas se adecue a tu opinion, se maneja una puntuación de 1 a 5, siendo 1 la calificación mas baja y 5 la mas alta, de izquierda a derecha
+                    <span>{{ $position }}/{{ $size }}</span>
+                  {{-- Selecciona la opcion que mas se adecue a tu opinion, se maneja una puntuación de 1 a 5, siendo 1 la calificación mas baja y 5 la mas alta, de izquierda a derecha --}}
                 </div>
               </div>
 

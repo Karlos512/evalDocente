@@ -6,5 +6,12 @@ use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
-    //
+    public function nuevoAlumno(){
+        return view('admin.nuevo-alumno');
+    }
+
+    public function asignar(){
+        return view('admin.asignaciones');
+    }
+
 }
