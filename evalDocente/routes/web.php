@@ -37,4 +37,6 @@ Route::get('logout',[UserController::class,'logout'])->name('logout');
 //ADMIN ROUTES
 Route::get('/admin/nuevo-alumno',[AdminController::class,'nuevoAlumno'])->middleware('auth')->name('nuevo-alumno');
 
+Route::get('/admin/nueva-materia',[AdminController::class,'nuevaMateria'])->middleware('auth')->name('nueva-materia');
+
 Route::get('/admin/asignar',[AdminController::class,'asignar'])->middleware('auth')->name('asignar');
