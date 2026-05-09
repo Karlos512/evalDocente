@@ -32,7 +32,7 @@ class UserLogin extends Component
 
     public function submitForm(Request $request){
         $credentials = [
-            'username' => $this->usuario,
+            'matricula' => $this->usuario,
             'password' => $this->password
         ];
 

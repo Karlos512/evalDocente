@@ -27,7 +27,9 @@ Route::get('evaluacion',[UserController::class,'TestView'])->middleware('auth')-
 
 Route::get('welcome',[UserController::class,'WelcomeView'])->middleware('auth')->name('welcome');
 
-Route::get('gracias',[UserController::class,'ThanksView'])->middleware('auth')->name('gracias');
+// Route::get('gracias',[UserController::class,'ThanksView'])->middleware('auth')->name('gracias');
+
+Route::get('gracias',[UserController::class,'ThanksView'])->name('gracias');
 
 Route::get('logout',[UserController::class,'logout'])->name('logout');
 

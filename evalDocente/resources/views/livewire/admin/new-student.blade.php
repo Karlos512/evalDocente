@@ -26,9 +26,9 @@
 
                             <!-- Contraseña -->
                             <div class="col-md-6 mb-3">
-                                <label class="form-label fw-bold">Contraseña Temporal</label>
-                                <input type="password" wire:model="password" class="form-control" placeholder="Mínimo 8 caracteres">
-                                @error('password') <span class="text-danger small">{{ $message }}</span> @enderror
+                                <label class="form-label fw-bold">Matricula</label>
+                                <input type="text" wire:model="matricula" class="form-control" placeholder="Mínimo 8 caracteres">
+                                @error('matricula') <span class="text-danger small">{{ $message }}</span> @enderror
                             </div>
 
                             <!-- Selección de Semestre -->

@@ -14,7 +14,7 @@ class NewStudent extends Component
     public
     $name="",
     $email="",
-    $password="",
+    $matricula="",
     $grupo="",
     $semestre="";
 
@@ -32,7 +32,7 @@ class NewStudent extends Component
         $this->validate([
             'name' => 'required',
             'email' =>'required',
-            'password' => 'required',
+            'matricula' => 'required',
             'semestre'=>'required',
             'grupo'=>'required',
         ]);
@@ -41,8 +41,9 @@ class NewStudent extends Component
         $user = User::create([
             'username' => $this->name,
             'email' => $this->email,
-            'password' => Hash::make($this->password),
+            'password' => Hash::make($this->matricula),
             'role' => 2,
+            'matricula' => $this->matricula,
             'semester_id' => $this->semestre,
             'group_id' => $this->grupo
 
