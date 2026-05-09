@@ -20,7 +20,7 @@ class NewMateria extends Component
             'name' => 'required|string|max:255',
         ]);
 
-        marteriamodel::create([
+        marteriasmodel::create([
             'name' => $this->name,
         ]);
 
