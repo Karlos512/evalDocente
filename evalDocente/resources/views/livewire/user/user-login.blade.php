@@ -6,9 +6,6 @@
                     <h5 class="card-title text-center mb-5 fw-light fs-5">
                        <strong>LOGIN</strong>
                     </h5>
-                    {{-- {{ route('login') }} --}}
-                    {{-- <form action="#" method="POST">
-                        @csrf --}}
 
                         <div class="form-floating mb-3">
                             <input type="text"  wire:model="usuario" class="form-control" id="floatingInput" placeholder="20152735" required>
@@ -21,10 +18,7 @@
                         </div>
 
                         <div class="form-check mb-3">
-                            {{-- <input class="form-check-input" type="checkbox" value="" id="rememberPasswordCheck">
-                            <label class="form-check-label" for="rememberPasswordCheck">
-                                Recordar sesión
-                            </label> --}}
+                            
                         </div>
 
                         <div class="d-grid">
@@ -36,7 +30,6 @@
                         <hr class="my-4">
 
                         <div class="text-center">
-                            {{-- <a class="small text-decoration-none" href="#">¿Olvidaste tu contraseña?</a> --}}
                         </div>
                     {{-- </form> --}}
                 </div>
