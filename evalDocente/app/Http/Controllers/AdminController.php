@@ -14,4 +14,8 @@ class AdminController extends Controller
         return view('admin.asignaciones');
     }
 
+    public function nuevaMateria(){
+        return view('admin.nueva-materia');
+    }
+
 }
