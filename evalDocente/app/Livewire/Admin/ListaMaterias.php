@@ -16,4 +16,13 @@ class ListaMaterias extends Component
             'materias' => materiasmodel::paginate(10),
         ]);
     }
+
+    public function delete($id)
+{
+    $materia = materiasmodel::findOrFail($id);
+
+    $materia->delete();
+
+    session()->flash('message', 'Materia eliminada correctamente');
+}
 }
