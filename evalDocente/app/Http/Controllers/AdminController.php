@@ -22,4 +22,8 @@ class AdminController extends Controller
         return view('admin.lista-materias');
     }
 
+    public function nuevaPregunta(){
+        return view('admin.nueva-pregunta');
+    }
+
 }

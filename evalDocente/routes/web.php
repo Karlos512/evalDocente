@@ -39,7 +39,8 @@ Route::get('/admin/nuevo-alumno',[AdminController::class,'nuevoAlumno'])->middle
 
 Route::get('/admin/nueva-materia',[AdminController::class,'nuevaMateria'])->middleware('auth')->name('nueva-materia');
 
+Route::get('/admin/nueva-pregunta',[AdminController::class,'nuevaPregunta'])->middleware('auth')->name('nueva-pregunta');
+
 Route::get('/admin/asignar',[AdminController::class,'asignar'])->middleware('auth')->name('asignar');
 
 Route::get('/admin/lista-materias',[AdminController::class,'listaMaterias'])->middleware('auth')->name('lista-materias');
-
