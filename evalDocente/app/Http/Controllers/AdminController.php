@@ -18,4 +18,8 @@ class AdminController extends Controller
         return view('admin.nueva-materia');
     }
 
+    public function listaMaterias(){
+        return view('admin.lista-materias');
+    }
+
 }

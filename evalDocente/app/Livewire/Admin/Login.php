@@ -32,6 +32,7 @@ class Login extends Component
     // }
 
     public function submitForm(Request $request){
+        dd('entrando a method');
         $credentials = [
             'username' => $this->usuario,
             'password' => $this->password
