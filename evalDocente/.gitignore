@@ -17,3 +17,6 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+evalDocente/config/database.php
+evalDocente/composer.lock
+evalDocente/composer.json
