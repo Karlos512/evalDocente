@@ -4,6 +4,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -46,3 +47,5 @@ Route::get('/admin/asignar',[AdminController::class,'asignar'])->middleware('aut
 Route::get('/admin/lista-materias',[AdminController::class,'listaMaterias'])->middleware('auth')->name('lista-materias');
 
 Route::get('/admin/lista-alumnos',[AdminController::class,'listaAlumnos'])->middleware('auth')->name('lista-alumnos');
+
+Route::get('/admin/edita-alumno/{id}', [AdminController::class, 'editaAlumno'])->middleware('auth')->name('edita-alumno');

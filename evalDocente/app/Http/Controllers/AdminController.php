@@ -30,4 +30,8 @@ class AdminController extends Controller
         return view('admin.lista-alumnos');
     }
 
+    public function editaAlumno($id)
+    {
+        return view('admin.edita-alumno', compact('id'));
+    }
 }

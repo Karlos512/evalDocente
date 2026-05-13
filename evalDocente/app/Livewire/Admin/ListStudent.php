@@ -28,6 +28,10 @@ class ListStudent extends Component
         session()->flash('message', 'Alumno eliminada correctamente');
     }
 
+    public function edit($id)
+    {
+        return redirect()->route('edita-alumno', $id);
+    }
 
 }
 
