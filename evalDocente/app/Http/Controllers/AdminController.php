@@ -26,4 +26,8 @@ class AdminController extends Controller
         return view('admin.nueva-pregunta');
     }
 
+    public function listaAlumnos(){
+        return view('admin.lista-alumnos');
+    }
+
 }

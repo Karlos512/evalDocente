@@ -9,6 +9,7 @@ use App\Models\materiasmodel;
 class ListaMaterias extends Component
 {
     use WithPagination;
+    protected $paginationTheme = 'bootstrap';
 
     public function render()
     {

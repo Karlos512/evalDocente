@@ -44,3 +44,5 @@ Route::get('/admin/nueva-pregunta',[AdminController::class,'nuevaPregunta'])->mi
 Route::get('/admin/asignar',[AdminController::class,'asignar'])->middleware('auth')->name('asignar');
 
 Route::get('/admin/lista-materias',[AdminController::class,'listaMaterias'])->middleware('auth')->name('lista-materias');
+
+Route::get('/admin/lista-alumnos',[AdminController::class,'listaAlumnos'])->middleware('auth')->name('lista-alumnos');
