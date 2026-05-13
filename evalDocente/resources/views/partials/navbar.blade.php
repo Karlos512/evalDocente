@@ -1,112 +1,80 @@
 <header class="bg-gradient-to-b from-[#fff] to-[#fff]">
 
-    {{-- <nav class="navbar">
-        <a href="{{ route('home') }}">
-            <img src="{{asset('images/home/logo3.png')}}" alt="" id="logo-nav">
-        </a>
-
-        <input type="checkbox" name="menu-toggle" id="menu-toggle">
-        <label for="menu-toggle" class="menu-icon">
-            <div class="line"></div>
-            <div class="line"></div>
-            <div class="line"></div>
-        </label>
-
-        @if (Route::currentRouteName() == "home")
-        <ul class="nav-links">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li><a href="#about">ABOUT US</a></li>
-            <li><a href="{{ route('team-eleven') }}">TEAM</a></li>
-            <li><a href="{{ route('services-eleven') }}">SERVICIOS</a></li>
-            <li><a href="{{ route('clientes-eleven') }}">CASOS DE ÉXITO</a></li>
-            <li><a href="{{ route('blog-eleven')}} ">BLOG/NEWS</a></li>
-            <li><a href="#contact-section">CONTACTO</a></li>
-
-
-            @if(app()->getLocale() == 'en')
-                <li><a href="\lang\en" style="color:darkorange">EN</a></li>
-                <li><a href="\lang\es">ES</a></li>
-            @else
-                <li><a href="\lang\en">EN</a></li>
-                <li><a href="\lang\es" style="color:darkorange">ES</a></li>
-            @endif
-
-        </ul>
-        @endif
-
-        @if ((Route::currentRouteName() != "home" || Route::currentRouteName() != "login") && !Auth::guest())
-        <ul class="nav-links">
-            <li><a href="{{ route("nuevo-post") }}">Nuevo Articulo</a></li>
-            <li><a href="{{ route("lista-post") }}">Blogs/News</a></li>
-            <li><a href="{{ route("nuevo-miembro") }}">Nuevo Miembro</a></li>
-            <li><a href="{{ route("lista-miembros") }}">Miembros</a></li>
-            <li><a href="{{ route("logout") }}">Logout</a></li>
-        </ul>
-        @endif
-
-         @if ((Route::currentRouteName() != "home" || Route::currentRouteName() != "login") && Auth::guest())
-        <ul class="nav-links">
-            <li></li>
-            <li></li>
-            <li></li>
-            <li><a href="{{route('home')}}#about">ABOUT US</a></li>
-            <li><a href="{{ route('team-eleven') }}">TEAM</a></li>
-            <li><a href="{{ route('services-eleven') }}">SERVICIOS</a></li>
-            <li><a href="{{ route('clientes-eleven') }}">CASOS DE ÉXITO</a></li>
-            <li><a href="{{route('blog-eleven')}}">BLOG/NEWS</a></li>
-            <li><a href="{{route('home')}}#contact-section">CONTACTO</a></li>
-            @if(app()->getLocale() == 'en')
-                <li><a href="\lang\en" style="color:darkorange">EN</a></li>
-                <li><a href="\lang\es">ES</a></li>
-            @else
-                <li><a href="\lang\en">EN</a></li>
-                <li><a href="\lang\es" style="color:darkorange">ES</a></li>
-            @endif
-        </ul>
-        @endif
-
-    </nav> --}}
-
-
-    {{-- -------------------------------------------------------- --}}
-    <nav class="navbar">
-        <div class="logo">
-            <a href="{{ route('home') }}">
-                <img src="{{asset('images/home/logo3.png')}}" alt="" id="logo-nav">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm py-3">
+        <div class="container">
+            <!-- Logo / Marca -->
+            <a class="navbar-brand fw-bold d-flex align-items-center" href="{{ route('lista-materias') }}">
+                <i class="bi bi-shield-lock-fill me-2 text-primary"></i>
+                UMA <span class="text-primary ms-1">Admin</span>
             </a>
-        </div>
 
-        <input type="checkbox" id="click">
-        <label for="click" class="menu-btn">
-            <i class="icon-menu">☰</i>
-        </label>
+            <!-- Botón Móvil -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#adminNavbar">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-        <ul>
-            <li><a href="{{route('home')}}#about">ABOUT US</a></li>
-            <li><a href="{{ route('team-eleven') }}">TEAM</a></li>
-            <li><a href="{{ route('services-eleven') }}">SERVICIOS</a></li>
-            <li><a href="{{ route('clientes-eleven') }}">CASOS DE ÉXITO</a></li>
-            <li><a href="{{route('blog-eleven')}}">BLOG/NEWS</a></li>
-            <li><a href="{{route('home')}}#contact-section">CONTACTO</a></li>
-
-            <li class="dropdown lang-selector">
-                <a href="#">🌐 {{ strtoupper(app()->getLocale()) }} ▾</a>
-                <ul class="submenu">
-                    {{-- @if(app()->getLocale() == 'en')
-                        <li><a href="\lang\en" style="color:darkorange">EN</a></li> --}}
-                        <li><a href="\lang\es">ES</a></li>
-                    {{-- @else --}}
-                        <li><a href="\lang\en">EN</a></li>
-                        {{-- <li><a href="\lang\es" style="color:darkorange">ES</a></li>
-                    @endif --}}
-                    {{-- <li><a href="{{ route('lang.switch', 'es') }}">🇲🇽 Español</a></li>
-                    <li><a href="{{ route('lang.switch', 'en') }}">🇺🇸 English</a></li> --}}
+            <div class="collapse navbar-collapse" id="adminNavbar">
+                <!-- Enlaces Izquierdos -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/lista-materias*') ? 'active' : '' }}" href="{{ route('lista-materias') }}">
+                            <i class="bi bi-people me-1"></i> Profesores
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/lista-materias*') ? 'active' : '' }}" href="{{ route('lista-materias') }}">
+                            <i class="bi bi-book me-1"></i> Materias
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/lista-alumnos*') ? 'active' : '' }}" href="{{ route('lista-alumnos') }}">
+                            <i class="bi bi-person-badge me-1"></i> Alumnos
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/lista-materias*') ? 'active' : '' }}" href="{{ route('lista-materias') }}">
+                            <i class="bi bi-book me-1"></i> Preguntas
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/asignar*') ? 'active' : '' }}" href="{{ route('asignar') }}">
+                            <i class="bi bi-link-45deg me-1"></i> Asignaciones
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/asignar*') ? 'active' : '' }}" href="{{ route('asignar') }}">
+                            <i class="bi bi-link-45deg me-1"></i> Resultados
+                        </a>
+                    </li>
                 </ul>
-            </li>
-        </ul>
+
+                <!-- Info Usuario / Logout -->
+                <div class="d-flex align-items-center">
+                    <div class="text-light me-3 d-none d-lg-block">
+                        {{-- <small class="text-muted d-block" style="font-size: 0.7rem;">ADMINISTRADOR</small> --}}
+                        <span class="fw-bold">{{ auth()->user()->username }}</span>
+                    </div>
+
+                    <div class="dropdown">
+                        <button class="btn btn-outline-light btn-sm dropdown-toggle rounded-circle" type="button" data-bs-toggle="dropdown" style="width: 40px; height: 40px;">
+                            <i class="bi bi-person"></i>
+                        </button>
+                        <ul class="dropdown-menu dropdown-menu-end shadow border-0">
+                            <li><a class="dropdown-item" href="/"><i class="bi bi-house me-2"></i> Ver Sitio</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li>
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <button type="submit" class="dropdown-item text-danger">
+                                        <i class="bi bi-box-arrow-right me-2"></i> Cerrar Sesión
+                                    </button>
+                                </form>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </nav>
-    {{-- -------------------------------------------------------- --}}
 
   </header>

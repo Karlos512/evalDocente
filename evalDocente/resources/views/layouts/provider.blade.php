@@ -8,6 +8,12 @@
     @if (Route::currentRouteName() != "login")
     {{-- @include('partials.navbar')        NAVBAR            --}}
     @endif
+
+    @auth
+        @if(auth()->user()->role === 'admin')
+            @include('partials.navbar')
+        @endif
+    @endauth
     {{-- @endauth --}}
 
     {{-- <main>
