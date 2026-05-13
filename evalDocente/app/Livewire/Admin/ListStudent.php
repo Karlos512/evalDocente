@@ -19,6 +19,16 @@ class ListStudent extends Component
         ]);
     }
 
+    public function delete($id)
+    {
+        $alumno = User::findOrFail($id);
+
+        $alumno->delete();
+
+        session()->flash('message', 'Alumno eliminada correctamente');
+    }
+
+
 }
 
 

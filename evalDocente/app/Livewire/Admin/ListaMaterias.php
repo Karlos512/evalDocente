@@ -19,11 +19,11 @@ class ListaMaterias extends Component
     }
 
     public function delete($id)
-{
-    $materia = materiasmodel::findOrFail($id);
+    {
+        $materia = materiasmodel::findOrFail($id);
 
-    $materia->delete();
+        $materia->delete();
 
-    session()->flash('message', 'Materia eliminada correctamente');
-}
+        session()->flash('message', 'Materia eliminada correctamente');
+    }
 }
