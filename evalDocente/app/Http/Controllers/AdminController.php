@@ -34,4 +34,8 @@ class AdminController extends Controller
     {
         return view('admin.edita-alumno', compact('id'));
     }
+
+    public function listaProfesores(){
+        return view('admin.lista-profesores');
+    }
 }

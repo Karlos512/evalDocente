@@ -17,7 +17,7 @@
                 <!-- Enlaces Izquierdos -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('admin/lista-materias*') ? 'active' : '' }}" href="{{ route('lista-materias') }}">
+                        <a class="nav-link {{ request()->is('admin/lista-profesores*') ? 'active' : '' }}" href="{{ route('lista-profesores') }}">
                             <i class="bi bi-people me-1"></i> Profesores
                         </a>
                     </li>
