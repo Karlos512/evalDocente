@@ -50,4 +50,6 @@ Route::get('/admin/lista-profesores',[AdminController::class,'listaProfesores'])
 
 Route::get('/admin/lista-alumnos',[AdminController::class,'listaAlumnos'])->middleware('auth')->name('lista-alumnos');
 
+Route::get('/admin/lista-preguntas',[AdminController::class,'listaPreguntas'])->middleware('auth')->name('lista-preguntas');
+
 Route::get('/admin/edita-alumno/{id}', [AdminController::class, 'editaAlumno'])->middleware('auth')->name('edita-alumno');

@@ -38,4 +38,8 @@ class AdminController extends Controller
     public function listaProfesores(){
         return view('admin.lista-profesores');
     }
+
+    public function listaPreguntas(){
+        return view('admin.lista-preguntas');
+    }
 }
