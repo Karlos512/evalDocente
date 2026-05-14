@@ -24,4 +24,13 @@ class asignarmodel extends Model
 
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
+
+    // En AsignarModel.php
+    public function profesor() {
+        return $this->belongsTo(ProfesoresModel::class, 'teacher_id');
+    }
+
+    public function materia() {
+        return $this->belongsTo(MateriasModel::class, 'subject_id');
+    }
 }
