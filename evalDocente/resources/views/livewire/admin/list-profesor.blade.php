@@ -34,11 +34,11 @@
 
                             <td>
                                 <button
-                                    class="btn btn-danger btn-sm"
-                                    wire:click="delete({{ $p->id }})"
-                                    onclick="confirm('¿Seguro que deseas eliminar este profesor?') || event.stopImmediatePropagation()"
+                                    class="btn btn-warning btn-sm"
+                                    wire:click="suspender({{ $p->id }})"
+                                    onclick="confirm('¿Seguro que deseas suspender este profesor?') || event.stopImmediatePropagation()"
                                 >
-                                    Eliminar
+                                    Suspender
                                 </button>
                             </td>
                         </tr>
