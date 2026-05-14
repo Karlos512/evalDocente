@@ -43,18 +43,19 @@
                         <h6 class="fw-bold mb-3"><i class="bi bi-shield-check me-2 text-primary"></i>Consentimiento Legal</h6>
 
                         <div class="form-check mb-2">
-                            <input class="form-check-input shadow-sm" type="checkbox" id="terms" wire:model.live="aceptaTerminos">
+                            <input class="form-check-input" type="checkbox" id="terms" wire:model.live="aceptaTerminos">
                             <label class="form-check-label small text-secondary" for="terms">
-                                He leído y acepto los <a href="#" class="text-decoration-none fw-bold">Términos y Condiciones</a> de uso del sistema.
+                                He leído y acepto los <a href="#" data-bs-toggle="modal" data-bs-target="#modalTerminos" class="text-decoration-none fw-bold text-primary">Términos y Condiciones</a>.
                             </label>
                         </div>
 
                         <div class="form-check mb-0">
-                            <input class="form-check-input shadow-sm" type="checkbox" id="privacy" wire:model.live="aceptaPrivacidad">
+                            <input class="form-check-input" type="checkbox" id="privacy" wire:model.live="aceptaPrivacidad">
                             <label class="form-check-label small text-secondary" for="privacy">
-                                Acepto el <a href="#" class="text-decoration-none fw-bold">Aviso de Privacidad</a> para el manejo de mis datos académicos.
+                                Acepto el <a href="#" data-bs-toggle="modal" data-bs-target="#modalPrivacidad" class="text-decoration-none fw-bold text-primary">Aviso de Privacidad</a>.
                             </label>
                         </div>
+
                     </div>
 
                     <!-- Botón de Acción -->
@@ -83,6 +84,49 @@
                 <div class="card-footer bg-white border-0 py-3 text-center">
                     {{-- <small class="text-muted">ID de Sesión: {{ session()->getId() }}</small> --}}
                 </div>
+
+
+                <!-- Modal de Aviso de Privacidad -->
+                <div class="modal fade" id="modalPrivacidad" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content border-0 shadow">
+                            <div class="modal-header bg-light">
+                                <h5 class="modal-title fw-bold"><i class="bi bi-shield-lock me-2"></i>Aviso de Privacidad</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4" style="max-height: 400px; overflow-y: auto;">
+                                <p>En cumplimiento con la normativa vigente, la <strong>UMA</strong> garantiza que tu participación en este proceso es <strong>estrictamente anónima</strong>.</p>
+                                <p>Los datos recopilados (respuestas a la evaluación) tienen como único fin el fortalecimiento académico y la mejora continua del cuerpo docente. Los resultados se procesan de forma estadística y agregada; ningún profesor tendrá acceso a la identidad de los evaluadores.</p>
+                                <p>Tu <strong>ID de sesión</strong> y datos de usuario se utilizan únicamente para validar que cada alumno realice la evaluación correspondiente a su semestre ({{ auth()->user()->semester->name }}) y grupo.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="modal fade" id="modalTerminos" tabindex="-1" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-lg">
+                        <div class="modal-content border-0 shadow">
+                            <div class="modal-header bg-light">
+                                <h5 class="modal-title fw-bold"><i class="bi bi-shield-lock me-2"></i>Terminos y Condiciones</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body p-4" style="max-height: 400px; overflow-y: auto;">
+                                <p>En cumplimiento con la normativa vigente, la <strong>UMA</strong> garantiza que tu participación en este proceso es <strong>estrictamente anónima</strong>.</p>
+                                <p>Los datos recopilados (respuestas a la evaluación) tienen como único fin el fortalecimiento académico y la mejora continua del cuerpo docente. Los resultados se procesan de forma estadística y agregada; ningún profesor tendrá acceso a la identidad de los evaluadores.</p>
+                                <p>Tu <strong>ID de sesión</strong> y datos de usuario se utilizan únicamente para validar que cada alumno realice la evaluación correspondiente a su semestre ({{ auth()->user()->semester->name }}) y grupo.</p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Entendido</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
             </div>
         </div>
     </div>
