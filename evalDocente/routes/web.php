@@ -32,7 +32,7 @@ Route::get('welcome',[UserController::class,'WelcomeView'])->middleware('auth')-
 
 Route::get('gracias',[UserController::class,'ThanksView'])->name('gracias');
 
-Route::get('logout',[UserController::class,'logout'])->name('logout');
+Route::post('logout',[UserController::class,'logout'])->name('logout');
 
 
 //ADMIN ROUTES
