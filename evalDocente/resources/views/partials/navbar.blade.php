@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('admin/lista-materias*') ? 'active' : '' }}" href="{{ route('lista-materias') }}">
+                        <a class="nav-link {{ request()->is('admin/lista-preguntas*') ? 'active' : '' }}" href="{{ route('lista-preguntas') }}">
                             <i class="bi bi-book me-1"></i> Preguntas
                         </a>
                     </li>
