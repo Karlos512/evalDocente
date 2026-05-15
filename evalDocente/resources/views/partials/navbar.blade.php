@@ -27,6 +27,11 @@
                         </a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link {{ request()->is('admin/lista-grupos*') ? 'active' : '' }}" href="{{ route('lista-grupos') }}">
+                            <i class="bi bi-book me-1"></i> Grupos
+                        </a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link {{ request()->is('admin/lista-alumnos*') ? 'active' : '' }}" href="{{ route('lista-alumnos') }}">
                             <i class="bi bi-person-badge me-1"></i> Alumnos
                         </a>
@@ -42,7 +47,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('admin/asignar*') ? 'active' : '' }}" href="{{ route('asignar') }}">
+                        <a class="nav-link {{ request()->is('admin/lista-preguntas*') ? 'active' : '' }}" href="{{ route('lista-preguntas') }}">
                             <i class="bi bi-link-45deg me-1"></i> Resultados
                         </a>
                     </li>

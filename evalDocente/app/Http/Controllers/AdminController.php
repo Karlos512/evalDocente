@@ -42,4 +42,16 @@ class AdminController extends Controller
     public function listaPreguntas(){
         return view('admin.lista-preguntas');
     }
+
+    public function listaGrupos(){
+        return view('admin.lista-grupos');
+    }
+
+    public function nuevoGrupo(){
+        return view('admin.nuevo-grupo');
+    }
+
+    public function editaGrupo(){
+        return view('admin.edita-grupo');
+    }
 }

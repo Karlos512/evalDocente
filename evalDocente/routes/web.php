@@ -53,3 +53,9 @@ Route::get('/admin/lista-alumnos',[AdminController::class,'listaAlumnos'])->midd
 Route::get('/admin/lista-preguntas',[AdminController::class,'listaPreguntas'])->middleware('auth')->name('lista-preguntas');
 
 Route::get('/admin/edita-alumno/{id}', [AdminController::class, 'editaAlumno'])->middleware('auth')->name('edita-alumno');
+
+Route::get('/admin/nuevo-grupo',[AdminController::class,'nuevoGrupo'])->middleware('auth')->name('nuevo-grupo');
+
+Route::get('/admin/lista-grupos',[AdminController::class,'listaGrupos'])->middleware('auth')->name('lista-grupos');
+
+Route::get('/admin/edita-grupo/{id}', [AdminController::class, 'editaGrupo'])->middleware('auth')->name('edita-grupo');
