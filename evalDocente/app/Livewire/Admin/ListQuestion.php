@@ -30,7 +30,7 @@ class ListQuestion extends Component
 
     public function editQuestion($id)
     {
-        return redirect()->route('edita-Pregunta', $id);
+        return redirect()->route('edita-pregunta', $id);
     }
 
 }

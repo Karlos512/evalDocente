@@ -59,3 +59,5 @@ Route::get('/admin/nuevo-grupo',[AdminController::class,'nuevoGrupo'])->middlewa
 Route::get('/admin/lista-grupos',[AdminController::class,'listaGrupos'])->middleware('auth')->name('lista-grupos');
 
 Route::get('/admin/edita-grupo/{id}', [AdminController::class, 'editaGrupo'])->middleware('auth')->name('edita-grupo');
+
+Route::get('/admin/edita-pregunta/{id}', [AdminController::class, 'editaPregunta'])->middleware('auth')->name('edita-pregunta');
