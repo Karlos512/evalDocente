@@ -24,7 +24,7 @@ class NewGroup extends Component
 
         $this->reset('name');
 
-        return $this->redirect('/admin/nuevo-grupo', navigate: true);
+        return redirect()->route('lista-grupos');
     }
 
     public function render()

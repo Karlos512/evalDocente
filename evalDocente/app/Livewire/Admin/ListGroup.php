@@ -9,12 +9,25 @@ use App\Models\GruposModel;
 class ListGroup extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    // protected $paginationTheme = 'bootstrap';
+    public $search = '';
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function render()
     {
+        // $grupos = GruposModel::paginate(10);
+
+        $grupos = GruposModel::select('id', 'name') // O las columnas que tenga tu tabla
+        ->where('name', 'like', '%' . $this->search . '%')
+        //->latest('id') // Muestra los últimos creados primero
+        ->paginate(10);
+
         return view('livewire.admin.list-group', [
-            'grupos' => GruposModel::paginate(10),
+            'grupos' => $grupos
         ]);
     }
 

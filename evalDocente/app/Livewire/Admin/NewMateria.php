@@ -28,6 +28,6 @@ class NewMateria extends Component
 
         $this->reset('name');
 
-        return $this->redirect('/admin/nueva-materia', navigate: true);
+        return redirect()->route('lista-materias');
     }
 }

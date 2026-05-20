@@ -55,6 +55,7 @@ class NewStudent extends Component
         ]);
 
         session()->flash('status', 'Alumno registrado con éxito.');
-        return $this->redirect('/nuevo-alumno', navigate: true);
+        // return $this->redirect('/nuevo-alumno', navigate: true);
+        return redirect()->route('lista-alumnos');
     }
 }

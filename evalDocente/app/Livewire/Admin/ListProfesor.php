@@ -9,7 +9,13 @@ use App\Models\ProfesoresModel;
 class ListProfesor extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    // protected $paginationTheme = 'bootstrap';
+    public $search = '';
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function delete($id)
     {
@@ -34,11 +40,20 @@ class ListProfesor extends Component
     {
         return redirect()->route('edita-profesor', $id);
     }
-    
+
     public function render()
     {
+        // $profesores = ProfesoresModel::where('is_active', '1')->paginate(10);
+
+        $profesores = ProfesoresModel::where('is_active', '1')
+        ->where(function ($query) {
+            $query->where('name', 'like', '%' . $this->search . '%');
+        })
+        // ->latest('id')
+        ->paginate(10);
+
         return view('livewire.admin.list-profesor', [
-            'profesores' => ProfesoresModel::where('is_active', '1')->paginate(10),
+            'profesores' => $profesores
         ]);
     }
 }

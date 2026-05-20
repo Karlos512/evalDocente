@@ -33,4 +33,12 @@ class asignarmodel extends Model
     public function materia() {
         return $this->belongsTo(MateriasModel::class, 'subject_id');
     }
+
+    public function semester() {
+        return $this->belongsTo(SemestreModel::class, 'semester_id');
+    }
+
+    public function group() {
+        return $this->belongsTo(GruposModel::class, 'group_id');
+    }
 }

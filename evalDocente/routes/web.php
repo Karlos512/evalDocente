@@ -63,3 +63,7 @@ Route::get('/admin/edita-grupo/{id}', [AdminController::class, 'editaGrupo'])->m
 Route::get('/admin/edita-pregunta/{id}', [AdminController::class, 'editaPregunta'])->middleware('auth')->name('edita-pregunta');
 
 Route::get('/admin/edita-profesor/{id}', [AdminController::class, 'editaProfesor'])->middleware('auth')->name('edita-profesor');
+
+Route::get('/admin/lista-asignaciones',[AdminController::class,'listaAsignaciones'])->middleware('auth')->name('lista-asignaciones');
+
+Route::get('/admin/nuevo-profesor',[AdminController::class,'nuevoProfesor'])->middleware('auth')->name('nuevo-profesor');

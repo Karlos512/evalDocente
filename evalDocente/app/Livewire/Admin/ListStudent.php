@@ -10,12 +10,28 @@ use App\Models\User;
 class ListStudent extends Component
 {
     use WithPagination;
-    protected $paginationTheme = 'bootstrap';
+    // protected $paginationTheme = 'bootstrap';
+    public $search = '';
+
+    public function updatingSearch()
+    {
+        $this->resetPage();
+    }
 
     public function render()
     {
+
+        $alumnos = User::where('role', 'alumno')
+            ->with(['semester', 'group'])
+            ->where(function ($query) {
+                $query->where('username', 'like', '%' . $this->search . '%')
+                    ->orWhere('email', 'like', '%' . $this->search . '%');
+            })
+            ->latest('id')
+            ->paginate(10);
+
         return view('livewire.admin.list-student', [
-            'alumnos' => User::select('id', 'username', 'email', 'semester_id', 'group_id', 'matricula')->where('role', 'alumno')->paginate(10),
+            'alumnos' => $alumnos
         ]);
     }
 
@@ -34,8 +50,3 @@ class ListStudent extends Component
     }
 
 }
-
-
-
-
-

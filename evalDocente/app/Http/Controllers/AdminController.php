@@ -52,7 +52,7 @@ class AdminController extends Controller
     }
 
     public function editaGrupo($id){
-        return view('admin.edita-grupo', compact('id'));   
+        return view('admin.edita-grupo', compact('id'));
     }
 
     public function editaPregunta($id){
@@ -62,5 +62,13 @@ class AdminController extends Controller
     public function editaProfesor($id){
         return view('admin.edita-profesor', compact('id'));
     }
-    
+
+    public function listaAsignaciones(){
+        return view('admin.lista-asignaciones');
+    }
+
+    public function nuevoProfesor(){
+        return view('admin.nuevo-profesor');
+    }
+
 }

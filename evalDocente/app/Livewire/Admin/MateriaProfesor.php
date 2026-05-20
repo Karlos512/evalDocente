@@ -45,7 +45,8 @@ class MateriaProfesor extends Component
         ]);
 
         session()->flash('status', 'Relación creada correctamente.');
-        return $this->redirect('/admin/asignar', navigate: true);
+        // return $this->redirect('/admin/asignar', navigate: true);
+        return redirect()->route('lista-asignaciones');
     }
 
 }

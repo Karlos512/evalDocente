@@ -34,7 +34,7 @@ class NewQuestion extends Component
         ]);
 
         session()->flash('status', 'Pregunta registrada con éxito.');
-        return $this->redirect('/admin/nueva-pregunta', navigate: true);
+        return redirect()->route('lista-preguntas');
     }
 
     public function render()

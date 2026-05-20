@@ -42,7 +42,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('admin/asignar*') ? 'active' : '' }}" href="{{ route('asignar') }}">
+                        <a class="nav-link {{ request()->is('admin/lista-asignaciones*') ? 'active' : '' }}" href="{{ route('lista-asignaciones') }}">
                             <i class="bi bi-link-45deg me-1"></i> Asignaciones
                         </a>
                     </li>
