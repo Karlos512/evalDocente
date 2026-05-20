@@ -30,6 +30,11 @@ class ListProfesor extends Component
         return redirect()->route('lista-profesores');
     }
 
+    public function editarProfesor($id)
+    {
+        return redirect()->route('edita-profesor', $id);
+    }
+    
     public function render()
     {
         return view('livewire.admin.list-profesor', [

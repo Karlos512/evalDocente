@@ -34,11 +34,19 @@
 
                             <td>
                                 <button
+                                    class="btn btn-primary btn-sm me-1"
+                                    wire:click="editarProfesor({{ $p->id }})"
+                                >
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+
+                                <button
                                     class="btn btn-warning btn-sm"
+                                    title="Suspender profesor"
                                     wire:click="suspender({{ $p->id }})"
                                     onclick="confirm('¿Seguro que deseas suspender este profesor?') || event.stopImmediatePropagation()"
                                 >
-                                    Suspender
+                                    <i class="bi bi-person-x-fill"></i>
                                 </button>
                             </td>
                         </tr>

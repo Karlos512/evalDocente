@@ -58,4 +58,9 @@ class AdminController extends Controller
     public function editaPregunta($id){
         return view('admin.edita-pregunta', compact('id'));
     }
+
+    public function editaProfesor($id){
+        return view('admin.edita-profesor', compact('id'));
+    }
+    
 }
