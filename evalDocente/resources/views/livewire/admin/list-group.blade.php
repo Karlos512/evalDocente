@@ -33,12 +33,19 @@
                             <td>{{ $g->name }}</td>
 
                             <td>
+                               <button
+                                    class="btn btn-primary btn-sm me-1"
+                                    wire:click="editGroup({{ $g->id }})"
+                                >
+                                    <i class="bi bi-pencil-fill"></i>
+                                </button>
+
                                 <button
                                     class="btn btn-danger btn-sm"
                                     wire:click="delete({{ $g->id }})"
-                                    onclick="confirm('¿Seguro que deseas eliminar esta materia?') || event.stopImmediatePropagation()"
+                                    onclick="confirm('¿Seguro que deseas eliminar este grupo?') || event.stopImmediatePropagation()"
                                 >
-                                    Eliminar
+                                  <i class="bi bi-trash-fill"></i>
                                 </button>
                             </td>
                         </tr>

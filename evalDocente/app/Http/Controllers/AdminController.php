@@ -51,8 +51,8 @@ class AdminController extends Controller
         return view('admin.nuevo-grupo');
     }
 
-    public function editaGrupo(){
-        return view('admin.edita-grupo');   //falta validarn
+    public function editaGrupo($id){
+        return view('admin.edita-grupo', compact('id'));   
     }
 
     public function editaPregunta($id){

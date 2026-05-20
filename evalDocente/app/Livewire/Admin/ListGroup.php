@@ -28,4 +28,9 @@ class ListGroup extends Component
 
         session()->flash('message', 'Grupo eliminado correctamente');
     }
+
+    public function editGroup($id)
+    {
+        return redirect()->route('edita-grupo', $id);
+    }
 }
