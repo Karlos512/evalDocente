@@ -67,3 +67,5 @@ Route::get('/admin/edita-profesor/{id}', [AdminController::class, 'editaProfesor
 Route::get('/admin/lista-asignaciones',[AdminController::class,'listaAsignaciones'])->middleware('auth')->name('lista-asignaciones');
 
 Route::get('/admin/nuevo-profesor',[AdminController::class,'nuevoProfesor'])->middleware('auth')->name('nuevo-profesor');
+
+Route::get('/admin/resultados',[AdminController::class,'resultadosProfesor'])->middleware('auth')->name('resultados');

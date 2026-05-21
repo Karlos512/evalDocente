@@ -71,4 +71,8 @@ class AdminController extends Controller
         return view('admin.nuevo-profesor');
     }
 
+    public function resultadosProfesor(){
+        return view('admin.resultados-profesor');
+    }
+
 }

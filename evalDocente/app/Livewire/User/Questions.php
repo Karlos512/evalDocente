@@ -7,6 +7,7 @@ use App\Models\AsignarModel;
 use App\Models\questionsmodel;
 use App\Models\profesoresmodel;
 use App\Models\materiasmodel;
+use App\Models\answermodel;
 
 
 class Questions extends Component
@@ -14,8 +15,7 @@ class Questions extends Component
     public $position=1, $current ,$size=30;
     public $preguntas, $pregunta_detalle,$pregunta,$categoria;
 
-    public $asignaciones; // Materias y profesores del alumno
-    // public $preguntas;    // Lista de preguntas de la base de datos
+    public $asignaciones;
     public $indiceAsignacion = 0; // Para saber qué profesor estamos evaluando
     public $indicePregunta = 0;   // Para saber en qué pregunta vamos
 
@@ -31,16 +31,23 @@ class Questions extends Component
         $this->preguntas = questionsmodel::all();
     }
 
-    public function guardarRespuesta($valor)
+    public function guardarRespuesta($score)
     {
-        // Aquí guardarías la respuesta en una tabla 'resultados'
-        // Resultado::create([...]);
 
-        // Lógica para avanzar
+        // answermodel::create([
+        //     'user_id'     => Auth::id(),
+        //     'teacher_id'  => $asignacionActual->teacher_id, // Tomados de tu asignación activa
+        //     'subject_id'  => $asignacionActual->subject_id,
+        //     'question_id' => $preguntaActual->id,
+        //     'score'       => $score,                        // El valor del emoji presionado (1 al 5)
+        //     'comment'     => null,
+        //     'created_at'  => now(),
+        // ]);
+
+
         if ($this->indicePregunta < count($this->preguntas) - 1) {
             $this->indicePregunta++;
         } else {
-            // Si terminó las preguntas de este profesor, pasamos al siguiente
             if ($this->indiceAsignacion < count($this->asignaciones) - 1) {
                 $this->indiceAsignacion++;
                 $this->indicePregunta = 0; // Reiniciamos preguntas para el nuevo profe
@@ -52,43 +59,8 @@ class Questions extends Component
 
     public function render()
     {
-
-        // $this->preguntas = questionsmodel::query()->get();
-
-        // $this->size = sizeof($this->preguntas);
-
-        // if ($this->size > 0) {
-
-        //     if ($this->position == 1) {
-        //         $this->pregunta_detalle = $this->preguntas[0];
-        //     }else{
-        //         $this->pregunta_detalle = $this->preguntas[$this->position];
-        //     }
-
-        //     $this->pregunta = $this->pregunta_detalle['question_text'];
-        //     $this->categoria = $this->pregunta_detalle['category'];
-        //     $current = $this->position + 1;
-        // }else{
-        //     // $current = 0;
-        //     // $nota = [];
-        // }
-
-        // $this->current=$this->position+1;
-
-
         return view('livewire.user.questions'); //->with(compact('current'))
     }
 
-    // public function saveScore($profesorID, $questionId, $score){
-    //     //guardar pregunta respuesta
-    //     $this->incrementar();
-    // }
-
-    // public function incrementar(){
-    //     $this->position++;
-    //     if ($this->position >= $this->size) {
-    //         $this->position = 0;
-    //     }
-    // }
 
 }

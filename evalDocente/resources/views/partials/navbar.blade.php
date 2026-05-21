@@ -47,7 +47,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link {{ request()->is('admin/lista-preguntas*') ? 'active' : '' }}" href="{{ route('lista-preguntas') }}">
+                        <a class="nav-link {{ request()->is('admin/resultados*') ? 'active' : '' }}" href="{{ route('resultados') }}">
                             <i class="bi bi-link-45deg me-1"></i> Resultados
                         </a>
                     </li>
