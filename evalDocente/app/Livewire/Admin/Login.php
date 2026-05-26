@@ -32,7 +32,7 @@ class Login extends Component
     // }
 
     public function submitForm(Request $request){
-        dd('entrando a method');
+        
         $credentials = [
             'username' => $this->usuario,
             'password' => $this->password
@@ -46,7 +46,9 @@ class Login extends Component
             if ($user->role === 'admin') {
                 return redirect()->intended(route('nuevo-alumno'));
             }
-
+            if ($user->role === 'rh') {
+                return redirect()->route('resultados');
+            }
             return redirect()->intended(route('evaluacion'));
         }
 
