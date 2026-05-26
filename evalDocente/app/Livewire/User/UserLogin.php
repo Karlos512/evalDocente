@@ -44,6 +44,9 @@ class UserLogin extends Component
             if ($user->role === 'admin') {
                 return redirect()->intended(route('nuevo-alumno'));
             }
+            if ($user->role === 'rh'){
+                return redirect()->intended(route('resultados'));
+            }
 
             return redirect()->intended(route('welcome'));
         }
