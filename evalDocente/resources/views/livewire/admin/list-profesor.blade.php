@@ -77,6 +77,35 @@
             <h5 class="fw-bold mb-0 text-dark">
                 <i class="bi bi-link-45deg text-primary me-2"></i>Lista de Profesores
             </h5>
+
+            {{--  --}}
+            <div class="d-inline-block">
+                <input type="file" id="csvImportInput" wire:model="archivoCsv" accept=".csv" class="d-none">
+
+                <button type="button" class="btn btn-success btn-sm shadow-sm" onclick="document.getElementById('csvImportInput').click()">
+                    <i class="bi bi-file-earmark-spreadsheet-fill me-1"></i> Importar desde CSV
+                </button>
+
+                <span wire:loading wire:target="archivoCsv" class="text-success small ms-2">
+                    <div class="spinner-border spinner-border-sm" role="status"></div> Procesando archivo...
+                </span>
+            </div>
+
+            @if (session()->has('csv_success'))
+                <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    {{ session('csv_success') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+
+            @if (session()->has('csv_error'))
+                <div class="alert alert-danger alert-dismissible fade show mt-3" role="alert">
+                    {{ session('csv_error') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            {{--  --}}
+
             <a href="{{ route('nuevo-profesor') }}" class="btn btn-primary btn-sm shadow-sm">
                 <i class="bi bi-plus-lg me-1"></i> Nuevo Profesor
             </a>

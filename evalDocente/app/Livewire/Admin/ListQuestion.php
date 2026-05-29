@@ -4,14 +4,16 @@ namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 use App\Models\QuestionsModel;
 
 
 class ListQuestion extends Component
 {
+    use WithFileUploads;
     use WithPagination;
-    // protected $paginationTheme = 'bootstrap';
 
+    public $archivoCsv;
     public $search = '';
 
     public function updatingSearch()
@@ -47,6 +49,34 @@ class ListQuestion extends Component
     public function editQuestion($id)
     {
         return redirect()->route('edita-pregunta', $id);
+    }
+
+    public function updatedArchivoCsv()
+    {
+        $this->validate([
+            'archivoCsv' => 'required|mimes:csv,txt|max:10240',
+        ]);
+
+        $path = $this->archivoCsv->getRealPath();
+        $filas = array_map('str_getcsv', file($path));
+        array_shift($filas);
+
+        $insertados = 0;
+
+        try {
+            foreach ($filas as $fila) {
+                if (count($fila) < 1) continue;
+
+                QuestionsModel::create([
+                    'question_text' => $fila[0],
+                    'category'      => $fila[1],
+                ]);
+                $insertados++;
+            }
+            session()->flash('csv_success', "¡Éxito! Se agregaron {$insertados} preguntas al banco.");
+        } catch (\Exception $e) {
+            session()->flash('csv_error', "Error al procesar las preguntas: " . $e->getMessage());
+        }
     }
 
 }

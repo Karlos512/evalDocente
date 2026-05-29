@@ -4,13 +4,16 @@ namespace App\Livewire\Admin;
 
 use Livewire\Component;
 use Livewire\WithPagination;
+use Livewire\WithFileUploads;
 use App\Models\User;
 
 
 class ListStudent extends Component
 {
     use WithPagination;
-    // protected $paginationTheme = 'bootstrap';
+    use WithPagination;
+
+    public $archivoCsv;
     public $search = '';
 
     public function updatingSearch()
@@ -47,6 +50,43 @@ class ListStudent extends Component
     public function edit($id)
     {
         return redirect()->route('edita-alumno', $id);
+    }
+
+    public function updatedArchivoCsv()
+    {
+        $this->validate([
+            'archivoCsv' => 'required|mimes:csv,txt|max:10240',
+        ]);
+
+        $path = $this->archivoCsv->getRealPath();
+        $filas = array_map('str_getcsv', file($path));
+
+        $encabezados = array_shift($filas);
+
+        $insertados = 0;
+
+        try {
+            foreach ($filas as $fila) {
+                if (count($fila) < 2) continue;
+
+                User::create([
+                    'username' => $fila[0],
+                    'email' => $fila[1],
+                    'password' => isset($fila[2]) ? Hash::make($fila[2]) : Hash::make('sedu2026'),
+                    'role' => 2,
+                    'matricula' => $fila[2],
+                    'semester_id' => $fila[3],
+                    'group_id' => $fila[4]
+                ]);
+                $insertados++;
+            }
+
+            session()->flash('csv_success', "¡Éxito! Se importaron {$insertados} alumnos correctamente.");
+        } catch (\Exception $e) {
+            session()->flash('csv_error', "Error al procesar el archivo: " . $e->getMessage());
+        }
+
+        $this->cleanInstance();
     }
 
 }
