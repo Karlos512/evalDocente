@@ -23,7 +23,7 @@
             <a href="{{ route('logout') }}"
                class="btn btn-return shadow-sm"
                onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
-                Finalizar y Salir
+                Concluir actividad
             </a>
         </div>
 
