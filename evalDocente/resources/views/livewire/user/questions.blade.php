@@ -48,20 +48,20 @@
                      style="cursor: pointer; transition: transform 0.2s;"
                      onmouseover="this.style.transform='scale(1.05)'"
                      onmouseout="this.style.transform='scale(1)'"
-                     wire:click="guardarRespuesta(1)"
-                     wire:key="btn-opt-1-{{ $preguntas[$indicePregunta]->id }}">
-                    <img src="{{ asset('images/emojis/c1.png') }}" alt="Totalmente En Desacuerdo" style="width: 55px; height: 55px; object-fit: contain;">
-                    <span class="small fw-semibold text-secondary text-sm-center">Totalmente en desacuerdo</span>
+                     wire:click="guardarRespuesta(5)"
+                     wire:key="btn-opt-5-{{ $preguntas[$indicePregunta]->id }}">
+                    <img src="{{ asset('images/emojis/c5.png') }}" alt="Totalmente de Acuerdo" style="width: 55px; height: 55px; object-fit: contain;">
+                    <span class="small fw-semibold text-secondary text-sm-center">Totalmente de acuerdo</span>
                 </div>
-
+                
                 <div class="d-flex flex-row flex-sm-column align-items-center gap-3 gap-sm-2 p-3 p-sm-2 w-100 w-sm-auto border rounded border-sm-0 bg-white shadow-sm"
                      style="cursor: pointer; transition: transform 0.2s;"
                      onmouseover="this.style.transform='scale(1.05)'"
                      onmouseout="this.style.transform='scale(1)'"
-                     wire:click="guardarRespuesta(2)"
-                     wire:key="btn-opt-2-{{ $preguntas[$indicePregunta]->id }}">
-                    <img src="{{ asset('images/emojis/c2.png') }}" alt="En desacuerdo" style="width: 55px; height: 55px; object-fit: contain;">
-                    <span class="small fw-semibold text-secondary text-sm-center">En desacuerdo</span>
+                     wire:click="guardarRespuesta(4)"
+                     wire:key="btn-opt-4-{{ $preguntas[$indicePregunta]->id }}">
+                    <img src="{{ asset('images/emojis/c4.png') }}" alt="De acuerdo" style="width: 55px; height: 55px; object-fit: contain;">
+                    <span class="small fw-semibold text-secondary text-sm-center">De acuerdo</span>
                 </div>
 
                 <div class="d-flex flex-row flex-sm-column align-items-center gap-3 gap-sm-2 p-3 p-sm-2 w-100 w-sm-auto border rounded border-sm-0 bg-white shadow-sm"
@@ -78,20 +78,20 @@
                      style="cursor: pointer; transition: transform 0.2s;"
                      onmouseover="this.style.transform='scale(1.05)'"
                      onmouseout="this.style.transform='scale(1)'"
-                     wire:click="guardarRespuesta(4)"
-                     wire:key="btn-opt-4-{{ $preguntas[$indicePregunta]->id }}">
-                    <img src="{{ asset('images/emojis/c4.png') }}" alt="De acuerdo" style="width: 55px; height: 55px; object-fit: contain;">
-                    <span class="small fw-semibold text-secondary text-sm-center">De acuerdo</span>
+                     wire:click="guardarRespuesta(2)"
+                     wire:key="btn-opt-2-{{ $preguntas[$indicePregunta]->id }}">
+                    <img src="{{ asset('images/emojis/c2.png') }}" alt="En desacuerdo" style="width: 55px; height: 55px; object-fit: contain;">
+                    <span class="small fw-semibold text-secondary text-sm-center">En desacuerdo</span>
                 </div>
 
                 <div class="d-flex flex-row flex-sm-column align-items-center gap-3 gap-sm-2 p-3 p-sm-2 w-100 w-sm-auto border rounded border-sm-0 bg-white shadow-sm"
                      style="cursor: pointer; transition: transform 0.2s;"
                      onmouseover="this.style.transform='scale(1.05)'"
                      onmouseout="this.style.transform='scale(1)'"
-                     wire:click="guardarRespuesta(5)"
-                     wire:key="btn-opt-5-{{ $preguntas[$indicePregunta]->id }}">
-                    <img src="{{ asset('images/emojis/c5.png') }}" alt="Totalmente de Acuerdo" style="width: 55px; height: 55px; object-fit: contain;">
-                    <span class="small fw-semibold text-secondary text-sm-center">Totalmente de acuerdo</span>
+                     wire:click="guardarRespuesta(1)"
+                     wire:key="btn-opt-1-{{ $preguntas[$indicePregunta]->id }}">
+                    <img src="{{ asset('images/emojis/c1.png') }}" alt="Totalmente En Desacuerdo" style="width: 55px; height: 55px; object-fit: contain;">
+                    <span class="small fw-semibold text-secondary text-sm-center">Totalmente en desacuerdo</span>
                 </div>
 
             </div>
